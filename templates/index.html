@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        .container {
+            margin-top: 50px;
+        }
+        .form-container {
+            background-color: #ceb98f; /* Form background color */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add a shadow effect */
+            margin-bottom: 20px;
+        }
+        .matches-container {
+            background-color: #ffffff; /* Matches container background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add a shadow effect */
+            margin-top: 20px;
+            
+
+        }
+       
+        .invalid-feedback {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-container">
+                    <h2 class="mb-4 text-center">Regex Matcher</h2>
+                    <form method="post" action="/results">
+                        <div class="form-group">
+                            <label for="testString"><b>Test String:</b></label>
+                            <input type="text" class="form-control" id="testString" name="testString" placeholder="Enter a test string" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regexPattern"><b>Regex Pattern:</b></label>
+                            <input type="text" class="form-control" id="regexPattern" name="regexPattern" placeholder="Enter a regex pattern" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Match</button>
+                    </form>
+                </div>
+                <div class="matches-container" id="matchesSection" style="display: none;">
+                    <h2 class="mb-3">Matches:</h2>
+                    <ul class="list-group" id="matchesList"></ul>
+                </div>
+                    <div class="form-container">
+                       <h2 class="mb-4 text-center">Email Validation</h2>
+                        <form method="post" action="/validate-email">
+                           <div class="form-group">
+                                <label for="Email"><b>Email:</b></label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                               <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                           <button type="submit" class="btn btn-primary btn-block">Validate Email</button>
+                        </form>
+                    <div id="emailValidationContent"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
